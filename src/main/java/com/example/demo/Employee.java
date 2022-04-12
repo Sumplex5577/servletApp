@@ -6,6 +6,9 @@ public class Employee {
     private String name;
     private String country;
     private String email;
+    private String telnumber;
+    private String surname;
+    private String age;
 
     public int getId() {
         return id;
@@ -39,13 +42,38 @@ public class Employee {
         this.email = email;
     }
 
+    public String getTelnumber() {
+        return telnumber;
+    }
+
+    public void setTelnumber(String telnumber) {
+        this.telnumber = telnumber;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
-        return "Employee{" +
-                "id=" + id +
+         return "Employee{" + "id=" + id +
                 ", name='" + name + '\'' +
                 ", country='" + country + '\'' +
                 ", email='" + email + '\'' +
-                '}';
+                ", telnumber='" + telnumber + '\'' +
+                ", surname='" + surname + '\'' +
+                ", age=" + age + '}';
     }
 }

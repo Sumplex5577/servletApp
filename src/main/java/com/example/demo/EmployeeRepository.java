@@ -6,16 +6,17 @@ import java.util.List;
 
 public class EmployeeRepository {
 
-    /*public static void main(String[] args) {
-        getConnection();
+    //    public static void main(String[] args) {
+    //        getConnection();
+    //
+    //        Employee employee = new Employee();
+    //
+    //        employee.setName("oleg");
+    //        employee.setEmail(" ");
+    //        employee.setCountry(" ");
+    //        save(employee);
+    //    }
 
-        Employee employee = new Employee();
-
-        employee.setName("oleg");
-        employee.setEmail(" ");
-        employee.setCountry(" ");
-        save(employee);
-    }*/
 
     public static Connection getConnection() {
 
@@ -41,10 +42,15 @@ public class EmployeeRepository {
         int status = 0;
         try {
             Connection connection = EmployeeRepository.getConnection();
-            PreparedStatement ps = connection.prepareStatement("insert into users(name,email,country) values (?,?,?)");
+            PreparedStatement ps = connection.prepareStatement("insert into users(name,email,country,telnumber,surname,age) values (?,?,?,?,?,?)");
             ps.setString(1, employee.getName());
             ps.setString(2, employee.getEmail());
             ps.setString(3, employee.getCountry());
+            ps.setString(4, employee.getTelnumber());
+            ps.setString(5, employee.getSurname());
+            ps.setString(6, employee.getAge());
+
+
 
             status = ps.executeUpdate();
             connection.close();
@@ -61,11 +67,14 @@ public class EmployeeRepository {
 
         try {
             Connection connection = EmployeeRepository.getConnection();
-            PreparedStatement ps = connection.prepareStatement("update users set name=?,email=?,country=? where id=?");
+            PreparedStatement ps = connection.prepareStatement("update users set name=?,email=?,country=?,telnumber=?,surname=?,age? where id=?");
             ps.setString(1, employee.getName());
             ps.setString(2, employee.getEmail());
             ps.setString(3, employee.getCountry());
-            ps.setInt(4, employee.getId());
+            ps.setString(4, employee.getTelnumber());
+            ps.setString(5, employee.getSurname());
+            ps.setString(6, employee.getAge());
+            ps.setInt(7, employee.getId());
 
             status = ps.executeUpdate();
             connection.close();
@@ -108,6 +117,9 @@ public class EmployeeRepository {
                 employee.setName(rs.getString(2));
                 employee.setEmail(rs.getString(3));
                 employee.setCountry(rs.getString(4));
+                employee.setTelnumber(rs.getString(5));
+                employee.setSurname(rs.getString(6));
+                employee.setAge(rs.getString(7));
             }
             connection.close();
 
@@ -134,6 +146,9 @@ public class EmployeeRepository {
                 employee.setName(rs.getString(2));
                 employee.setEmail(rs.getString(3));
                 employee.setCountry(rs.getString(4));
+                employee.setTelnumber(rs.getString(5));
+                employee.setSurname(rs.getString(6));
+                employee.setAge(rs.getString(7));
 
                 listEmployees.add(employee);
             }
