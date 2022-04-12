@@ -3,12 +3,11 @@ package com.example.demo;
 public class Employee {
 
     private int id;
-    private String name;
-    private String country;
-    private String email;
-    private String telnumber;
-    private String surname;
-    private String age;
+    private String watchbrand;
+    private String watchmodel;
+    private String price;
+    private String year;
+
 
     public int getId() {
         return id;
@@ -18,62 +17,45 @@ public class Employee {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getWatchbrand() {
+        return watchbrand;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setWatchbrand(String watchbrand) {
+        this.watchbrand = watchbrand;
     }
 
-    public String getCountry() {
-        return country;
+    public String getWatchmodel() {
+        return watchmodel;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setWatchmodel(String watchmodel) {
+        this.watchmodel = watchmodel;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPrice() {
+        return price;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public String getTelnumber() {
-        return telnumber;
+    public String getYear() {
+        return year;
     }
 
-    public void setTelnumber(String telnumber) {
-        this.telnumber = telnumber;
+    public void setYear(String year) {
+        this.year = year;
     }
 
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
 
     @Override
     public String toString() {
-         return "Employee{" + "id=" + id +
-                ", name='" + name + '\'' +
-                ", country='" + country + '\'' +
-                ", email='" + email + '\'' +
-                ", telnumber='" + telnumber + '\'' +
-                ", surname='" + surname + '\'' +
-                ", age=" + age + '}';
+        return "Employee{" + "id=" + id +
+                ", watchbrand='" + watchbrand + '\'' +
+                ", watchmodel='" + watchmodel + '\'' +
+                ", price='" + price + '\'' +
+                ", year='" + year + '\'' + '}';
     }
 }
