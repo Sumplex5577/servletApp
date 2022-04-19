@@ -45,8 +45,8 @@ public class EmployeeRepository {
             PreparedStatement ps = connection.prepareStatement("insert into watches(watchbrand,watchmodel,price,year) values (?,?,?,?)");
             ps.setString(1, employee.getWatchbrand());
             ps.setString(2, employee.getWatchmodel());
-            ps.setString(3, employee.getPrice());
-            ps.setString(4, employee.getYear());
+            ps.setInt   (3, employee.getPrice());
+            ps.setInt   (4, employee.getYear());
 
 
 
@@ -69,8 +69,8 @@ public class EmployeeRepository {
             PreparedStatement ps = connection.prepareStatement("update watches set watchbrand=?,watchmodel=?,price=?,year=? where id=?");
             ps.setString(1, employee.getWatchbrand());
             ps.setString(2, employee.getWatchmodel());
-            ps.setString(3, employee.getPrice());
-            ps.setString(4, employee.getYear());
+            ps.setInt(3, employee.getPrice());
+            ps.setInt(4, employee.getYear());
             ps.setInt(7, employee.getId());
 
             status = ps.executeUpdate();
@@ -113,8 +113,8 @@ public class EmployeeRepository {
                 employee.setId(rs.getInt(1));
                 employee.setWatchbrand(rs.getString(2));
                 employee.setWatchmodel(rs.getString(3));
-                employee.setPrice(rs.getString(4));
-                employee.setYear(rs.getString(5));
+                employee.setPrice(rs.getInt(4));
+                employee.setYear(rs.getInt(5));
 
             }
             connection.close();
@@ -141,8 +141,8 @@ public class EmployeeRepository {
                 employee.setId(rs.getInt(1));
                 employee.setWatchbrand(rs.getString(2));
                 employee.setWatchmodel(rs.getString(3));
-                employee.setPrice(rs.getString(4));
-                employee.setYear(rs.getString(5));
+                employee.setPrice(rs.getInt(4));
+                employee.setYear(rs.getInt(5));
 
 
                 listEmployees.add(employee);

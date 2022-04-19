@@ -16,14 +16,24 @@ public class PutServlet extends HttpServlet {
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+        String strs;
 
-        String sid = request.getParameter("id");
-        int id = Integer.parseInt(sid);
+        strs = request.getParameter("id");
+        int id = Integer.parseInt(strs);
 
         String watchbrand = request.getParameter("watchbrand");
         String watchmodel = request.getParameter("watchmodel");
-        String price = request.getParameter("price");
-        String year = request.getParameter("year");
+
+        strs = request.getParameter("price");
+        int price = Integer.parseInt(strs);
+        if(price < 1000 ){
+            throw new IOException("Unfortunately, amount has to be larger than 1000");
+        }
+        strs = request.getParameter("year");
+        int year = Integer.parseInt(strs);
+        if (year < 2020) {
+            throw new IOException("Sorry this shop sells only new watches");
+        }
 
 
         Employee employee = new Employee();

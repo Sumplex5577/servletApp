@@ -5,8 +5,8 @@ public class Employee {
     private int id;
     private String watchbrand;
     private String watchmodel;
-    private String price;
-    private String year;
+    private int price;
+    private int year;
 
 
     public int getId() {
@@ -33,19 +33,19 @@ public class Employee {
         this.watchmodel = watchmodel;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
